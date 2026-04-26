@@ -14,4 +14,4 @@ function Project({ name, image, github, tech, what, learned, challenges }) {
     );
 }
 
-export default Project;
+export default Project; 
