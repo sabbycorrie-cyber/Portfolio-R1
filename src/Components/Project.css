@@ -1,7 +1,33 @@
 .project {
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
-    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    min-height: 250px;
+    width: 80%;
+    max-width: 900px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.project img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-text {
+    flex: 1;
+    text-align: left;
+}
+
+.project a {
+    display: block;
     text-align: center;
+    margin-top: 20px;
 }
