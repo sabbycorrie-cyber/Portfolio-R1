@@ -1,3 +1,4 @@
+import {useState } from "react";
 import Project from "../components/Project";
 
 import atmImg from "../assets/atm-img.png";
@@ -5,8 +6,20 @@ import portfolioImg from "../assets/portfolio-img.png";
 import websiteImg from "../assets/website-img.png";
 
 function Portfolio () {
+    const [showProjects, setShowProjects] = useState(false);
+
     return (
         <div className="page">
+
+            <h1>My Projects</h1>
+
+            <button className="project-btn" onClick={() => setShowProjects(true)}
+                >View My Projects</button>
+
+                <p className="portfolio-description">Explore projects that showcase my front-end development skills, problem-solving abilities, and growth as a developer.
+                </p>
+                
+                {showProjects && (
                 <div className="project-grid">
                 
                     <Project
@@ -39,6 +52,8 @@ function Portfolio () {
                         challenges="Ensuring consistent layout across pages, fixing structure issues, and improving responsiveness while working with multiple files and styles."
                     />
             </div>
+        )}
+
         </div>
 
     );
