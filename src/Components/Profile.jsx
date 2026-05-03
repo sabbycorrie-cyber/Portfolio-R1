@@ -6,7 +6,7 @@ function Profile() {
     <div className="profile">
     <img src={profilePic} alt="Profile Picture" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover' }} className="img"/>
     <h1 className="profileTitle">Sabantho</h1>
-    <p className="profileTxt">Hello! I am 27 years old and I am a student.</p>
+    <p className="intro">Front-end developer in progress, with a passion for inclusive design and purposeful digital experiences.</p>
     </div>
 
     )
