@@ -3,10 +3,10 @@ import "./Popup.css";
 function Popup({ project, closePopup }) {
     return (
         <div className="popup-overlay">
-            <div className="popup-box">
+            <div className="popup-content">
+                <button onClick={closePopup}>X</button>
 
                 <h2>{project.name}</h2>
-
                 <img src={project.image} alt={project.name} />
 
                 <p><strong>Tech:</strong> {project.tech}</p>
@@ -14,11 +14,8 @@ function Popup({ project, closePopup }) {
                 <p><strong>What I learned:</strong> {project.learned} </p>
                 <p><strong>Challenges:</strong> {project.challenges} </p>
 
-                <a href={project.github} target="_blank">View GitHub Repo</a>
+                <a href={project.github} target="_blank" rel="noreferrer">View on GitHub</a>
 
-                <br />
-
-                <button onClick={closePopup}>Close</button>
             </div>
         </div>
     );

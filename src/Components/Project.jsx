@@ -3,9 +3,8 @@ import "./Project.css";
 function Project({ name, image, github, tech, what, learned, challenges, onClick }) {
     return (
         <div className="project" onClick={onClick}> 
+        <img src={image} alt={name} />
             <div className="project-content">
-
-                <img src={image} alt={name}/>
 
                 <div className="project-text">
                     <h2>{name}</h2>
