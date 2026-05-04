@@ -1,8 +1,8 @@
 import "./Project.css";
 
-function Project({ name, image, github, tech, what, learned, challenges }) {
+function Project({ name, image, github, tech, what, learned, challenges, onClick }) {
     return (
-        <div className="project">
+        <div className="project" onClick={onClick}> 
             <div className="project-content">
 
                 <img src={image} alt={name}/>
@@ -14,7 +14,6 @@ function Project({ name, image, github, tech, what, learned, challenges }) {
                     <p><strong>What I learned:</strong> {learned}</p>
                     <p><strong>Challenges:</strong> {challenges}</p>
 
-                    <a href={github}>View on GitHub</a>
             
                 </div>
             </div>
