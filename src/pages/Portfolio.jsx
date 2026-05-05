@@ -9,6 +9,7 @@ import websiteImg from "../assets/website-img.png";
 function Portfolio () {
     const [showProjects, setShowProjects] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
+    const [search, setSearch] = useState("");
 
     const projects = [
         {
@@ -40,25 +41,41 @@ function Portfolio () {
         }
     ];
 
+    const filteredProjects = projects.filter((project) =>
+        project.name.toLowerCase(). includes(search.toLowerCase()) ||
+    project.tech.toLowerCase().includes(search.toLowerCase())
+);
+
     return (
         <div className="page">
 
             <h1>My Projects</h1>
 
-            <button className="project-btn" onClick={() => setShowProjects(true)}
-                >View My Projects</button>
+            <button className="project-btn" onClick={() => setShowProjects(!showProjects)}
+                >
+                    {showProjects ? "Hide Projects" : "View My Projects"}
+                </button>
 
                 <p className="portfolio-description">Explore projects that showcase my front-end development skills, problem-solving abilities, and growth as a developer.
                 </p>
                 
                 {showProjects && (
-                <div className="project-grid">
+                    <input
+                    type="text"
+                    className="search-bar"
+                    placeholder="Search projects..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    />
+                )}
 
-                    {projects.map((project) => (
-                <Project key={project.name}
-                {...project}
-                onClick={() => setSelectedProject(project)}
-                />
+                {showProjects && (
+                    <div className="project-grid">
+                    {filteredProjects.map((project) => (
+                    <Project key={project.name}
+                    {...project}
+                    onClick={() => setSelectedProject(project)}
+                    />
                     ))}
 
                     </div>
@@ -70,7 +87,7 @@ function Portfolio () {
             closePopup={() => setSelectedProject(null)} 
             />
         )}
-    </div>
+    </div> 
     );
 }
 
